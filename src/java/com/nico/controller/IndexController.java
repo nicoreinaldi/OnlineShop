@@ -20,7 +20,7 @@ public class IndexController {
     @RequestMapping()
     public String goHome(Model model){
         model.addAttribute("msg", "Welcome Page");
-        return "index";
+        return "welcome";
     }
     
 }

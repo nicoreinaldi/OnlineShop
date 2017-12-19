@@ -10,15 +10,13 @@ package com.nico.bean;
  * @author Ryuuki
  */
 public class RegisterBean {
+    
     private String name;
-    private String email;
-    private String phone;
-    private String address;
-    private String city;
-    private String province;
-    private int postCode;
     private String username;
     private String password;
+    private String noHp;
+    private String email;
+    private String address;
 
     /**
      * @return the name
@@ -32,90 +30,6 @@ public class RegisterBean {
      */
     public void setName(String name) {
         this.name = name;
-    }
-
-    /**
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * @param email the email to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    /**
-     * @return the phone
-     */
-    public String getPhone() {
-        return phone;
-    }
-
-    /**
-     * @param phone the phone to set
-     */
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    /**
-     * @return the address
-     */
-    public String getAddress() {
-        return address;
-    }
-
-    /**
-     * @param address the address to set
-     */
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    /**
-     * @return the city
-     */
-    public String getCity() {
-        return city;
-    }
-
-    /**
-     * @param city the city to set
-     */
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    /**
-     * @return the province
-     */
-    public String getProvince() {
-        return province;
-    }
-
-    /**
-     * @param province the province to set
-     */
-    public void setProvince(String province) {
-        this.province = province;
-    }
-
-    /**
-     * @return the postCode
-     */
-    public int getPostCode() {
-        return postCode;
-    }
-
-    /**
-     * @param postCode the postCode to set
-     */
-    public void setPostCode(int postCode) {
-        this.postCode = postCode;
     }
 
     /**
@@ -144,5 +58,47 @@ public class RegisterBean {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * @return the noHp
+     */
+    public String getNoHp() {
+        return noHp;
+    }
+
+    /**
+     * @param noHp the noHp to set
+     */
+    public void setNoHp(String noHp) {
+        this.noHp = noHp;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * @return the address
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    /**
+     * @param address the address to set
+     */
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

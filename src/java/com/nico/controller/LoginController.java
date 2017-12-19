@@ -34,7 +34,7 @@ public class LoginController {
     public String goLogin(Model model) {
         LoginBean loginBean = new LoginBean();
         model.addAttribute("loginBean", loginBean);
-        return "login";
+        return "formlogin";
     }
     
     @RequestMapping("/in")
@@ -43,19 +43,19 @@ public class LoginController {
         User user = ud.findByUsername(loginBean.getUsername());
         if(user.getUsername()==null) {
             model.addAttribute("errMsg", "Username salah");
-            return "login";
+            return "formlogin";
         }
         String encryptedPassword = PasswordDigest.createEncryptedPassword(loginBean.getPassword());
         if(!encryptedPassword.equals(user.getPassword())) {
             model.addAttribute("errMsg", "Password salah");
-            return "login";
+            return "formlogin";
         }
         
         session.setAttribute("user", user);
         Cookie c = new Cookie("user", user.getName());
         c.setMaxAge(60*60*24);
         response.addCookie(c);
-        return "successlogin";
+        return "redirect: welcome";
     }
     
     @RequestMapping("/out") 

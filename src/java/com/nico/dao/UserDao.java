@@ -27,7 +27,7 @@ public class UserDao {
 
     private EntityManager em;
 
-    @org.springframework.transaction.annotation.Transactional
+    @Transactional
     public void saveUser(User user) {
         em = emf.createEntityManager();
         em.getTransaction().begin();

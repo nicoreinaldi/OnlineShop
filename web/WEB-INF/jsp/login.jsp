@@ -1,36 +1,31 @@
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%-- 
+    Document   : login
+    Created on : 18-Dec-2017, 11:03:28
+    Author     : user
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <div class="container">
-            <jsp:include page="title.jsp"></jsp:include>
-                <div class="wrapper">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <b>Form LogIn</b>
-                        </div>
-                        <div class="panel-body">
-                        <form:form  name="formLogin" action="${pageContext.request.contextPath}/log/in" modelAttribute="loginBean" method="POST">
-
-                            <form:label path="username" >Username :</form:label>
-                            <form:input path="username" class="form-control" placeholder="Input Username" required="required"></form:input><br/>
-
-                            <form:label path="password" >Password :</form:label>
-                            <form:password path="password" class="form-control" placeholder="Input Password" required="required"></form:password><br/>
-
-                            <form:button name="submit" value="submit" class="btn btn-primary" >SUBMIT</form:button> 
-
-                        </form:form>
-                            <h3>${errMsg}</h3>
-                    </div>
+<div class="span5">					
+    <h4 class="title"><span class="text"><strong>Login</strong> Form</span></h4>
+    <form action="${pageContext.request.contextPath}/log/in" method="post">
+        <input type="hidden" name="next" value="/">
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label">Username</label>
+                <div class="controls">
+                    <input type="text" placeholder="Enter your username" id="username" class="input-xlarge">
                 </div>
             </div>
-        </div>
-
-    </body>
-</html>
+            <div class="control-group">
+                <label class="control-label">Username</label>
+                <div class="controls">
+                    <input type="password" placeholder="Enter your password" id="password" class="input-xlarge">
+                </div>
+            </div>
+            <div class="control-group">
+                <input tabindex="3" class="btn btn-inverse large" type="submit" value="Sign into your account">
+                <hr>
+                <p class="reset">Recover your <a tabindex="4" href="#" title="Recover your username or password">username or password</a></p>
+            </div>
+        </fieldset>
+    </form>				
+</div>

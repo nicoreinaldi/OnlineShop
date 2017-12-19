@@ -26,7 +26,7 @@ public class RegisterController {
     public String registerForm(Model model) {
         RegisterBean registerBean = new RegisterBean();
         model.addAttribute("registerBean", registerBean);
-        return "registration";
+        return "formregister";
     }
     
     @RequestMapping(value="/save") 
@@ -36,18 +36,15 @@ public class RegisterController {
         String encryptedPassword = 
                 PasswordDigest.createEncryptedPassword(registerBean.getPassword());
         user.setName(registerBean.getName());
-        user.setEmail(registerBean.getEmail());
-        user.setPhone(registerBean.getPhone());
-        user.setAddress(registerBean.getAddress());
-        user.setCity(registerBean.getCity());
-        user.setProvince(registerBean.getProvince());
-        user.setPostCode(registerBean.getPostCode());
         user.setUsername(registerBean.getUsername());
         user.setPassword(encryptedPassword);
+        user.setEmail(registerBean.getEmail());
+        user.setNoHp(registerBean.getNoHp());
+        user.setAddress(registerBean.getAddress());
         
         ud.saveUser(user);
         model.addAttribute("data", registerBean);
-        return "successRegister";
+        return "formregister";
     }
     
 }
